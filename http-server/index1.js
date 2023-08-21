@@ -3,12 +3,12 @@ const retrieveEntries = () => {
   return entries ? JSON.parse(entries) : [];
 };
 
-let userEntries = retrieveEntries();
+let userEntrie = retrieveEntries();
 
 const displayEntries = () => {
   const entries = retrieveEntries();
 
-  const tableEntries = entries
+  const tableEntrie = entries
       .map(
           (entry) => `<tr>
               <td style = "padding: 2px 4px">${entry.name}</td>
@@ -30,7 +30,7 @@ const displayEntries = () => {
               <th style = "padding: 2px 10px">Accepted terms?</th>
           </tr>
       </thead>
-      <tbody>${tableEntries}</tbody>
+      <tbody>${tableEntrie}</tbody>
   </table>`;
 
   let details = document.getElementById("user-entries");
@@ -53,8 +53,8 @@ const saveUserForm = (event) => {
       acceptedTermsAndConditions,
   };
 
-  userEntries.push(entry);
-  localStorage.setItem("user-Entries", JSON.stringify(userEntries));
+  userEntrie.push(entry);
+  localStorage.setItem("user-Entries", JSON.stringify(userEntrie));
   displayEntries();
   userForm.reset();
 };
