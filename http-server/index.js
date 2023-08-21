@@ -1,9 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 
-let homeContent = "";
-let projectContent = "";
-let registrationContent = "";
+let homeCont = "";
+let projectCont = "";
+let registrationCont = "";
 
 const port = require("minimist")(process.argv.slice(2))
 
@@ -11,14 +11,14 @@ fs.readFile('home.html', (err, home) => {
     if (err) {
         throw err;
     }
-    homeContent = home;
+    homeCont = home;
 });
 
 fs.readFile('project.html', (err, project) => {
     if (err) {
         throw err;
     }
-    projectContent = project;
+    projectCont = project;
 });
 
 
@@ -26,7 +26,7 @@ fs.readFile('registration.html', (err, registration) => {
     if (err) {
         throw err;
     }
-    registrationContent = registration;
+    registrationCont = registration;
 });
 
 const server = http.createServer((request, response) => {
@@ -34,15 +34,15 @@ const server = http.createServer((request, response) => {
         response.writeHeader(200, { 'Content-Type': 'text/html' })
         switch (url) {
         case '/project':
-            response.write(projectContent);
+            response.write(projectCont);
             response.end();
             break;
         case '/registration':
-            response.write(registrationContent);
+            response.write(registrationCont);
             response.end();
             break;
         default:
-            response.write(homeContent);
+            response.write(homeCont);
             response.end();
             break;
 
