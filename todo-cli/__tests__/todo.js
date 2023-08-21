@@ -7,12 +7,12 @@ describe("Todo test cases", () => {
     let one_Day = 60 * 60 * 24 * 1000;
     [
       {
-        title: "Wd201 Node.js",
+        title: "WD201 Node.js",
         completed: false,
         dueDate: new Date(today.getTime() - 1 * one_Day).toISOString().slice(0, 10),
       },
       {
-        title: "Wd201 l2",
+        title: "WD201 l2",
         completed: false,
         dueDate: new Date().toISOString().slice(0, 10),
       },
